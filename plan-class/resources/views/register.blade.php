@@ -21,6 +21,10 @@
                 <input type="password" name="password_confirmation" class="form-control">
             </label>
             <button class="btn btn-primary">Cadastrar</button>
+            
+            <label>
+              Ainda não tem uma conta?
+            </label>
         </form>
     </div>
 @endsection
