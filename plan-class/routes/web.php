@@ -2,6 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [LoginController::class, 'index']);
+Route::post('/', [LoginController::class, 'login'])
+    ->name('login');
+
+Route::post('logout', [LoginController::class, 'logout'])
+    ->name('logout');
+
+Route::get('/cadastro', function () {
+    return view('register');
 });

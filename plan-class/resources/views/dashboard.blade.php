@@ -1,5 +1,4 @@
-@extends('layouts.main')
-@section('title', 'Dashboard')
+@extends('layout', ['title' => 'Dashboard'])
 
 @section('content')
 
