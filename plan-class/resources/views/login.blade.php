@@ -1,4 +1,5 @@
-@extends('layout', ['title' => 'Login'])
+@extends('layouts.main')
+@section('title', 'Login')
 
 @section('content')
   

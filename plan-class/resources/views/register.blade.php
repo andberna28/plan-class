@@ -1,4 +1,5 @@
-@extends('layout', ['title' => 'Registro'])
+@extends('layouts.main')
+@section('title', 'Cadastro')
 
 @section('content')
     <div class="container">
@@ -23,7 +24,9 @@
             <button class="btn btn-primary">Cadastrar</button>
             
             <label>
-              Ainda não tem uma conta?
+                <a href="">
+                    Já tem uma conta?
+                </a>
             </label>
         </form>
     </div>
