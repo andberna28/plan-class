@@ -41,9 +41,10 @@ return new class extends Migration
             $table->string('author');
             $table->string('title');
             $table->string('subtitle');
-            $table->string('edition');
+            $table->int('edition');
             $table->string('publishing_company');
-            $table->string('year_of_publication');
+            $table->year('year_of_publication');
+            $table->string('book_cover');
         });
     }
 
