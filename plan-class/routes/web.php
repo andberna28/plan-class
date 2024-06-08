@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserRegisterController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [LoginController::class, 'index']);
@@ -10,6 +11,9 @@ Route::post('/', [LoginController::class, 'login'])
 Route::post('logout', [LoginController::class, 'logout'])
     ->name('logout');
 
-Route::get('/cadastro', function () {
+Route::get('cadastro', function () {
     return view('register');
 });
+
+Route::post('cadastro', [UserRegisterController::class, 'store'])
+    ->name('register');

@@ -2,9 +2,13 @@
 @section('title', 'Cadastro')
 
 @section('content')
+    @empty($errors)
+        @dd($errors)
+    @endisset
     <div class="container">
         <h1>Página de Cadastro</h1>
-        <form action="" method="POST">
+        <form action="{{ route('register') }}" method="POST">
+            @csrf
             <label>
                 Nome:
                 <input type="text" name="name" class="form-control">
@@ -22,10 +26,11 @@
                 <input type="password" name="password_confirmation" class="form-control">
             </label>
             <button class="btn btn-primary">Cadastrar</button>
-            
+
             <label>
-                <a href="">
-                    Já tem uma conta?
+                Já tem uma conta?
+                <a href="{{ route('login') }}">
+                    Faça login
                 </a>
             </label>
         </form>
