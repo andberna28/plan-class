@@ -36,16 +36,7 @@ return new class extends Migration
             $table->integer('last_activity')->index();
         });
 
-        Schema::create('books', function (Blueprint $table){
-            $table->id();
-            $table->string('author');
-            $table->string('title');
-            $table->string('subtitle');
-            $table->integer('edition');
-            $table->string('publishing_company');
-            $table->year('year_of_publication');
-            $table->string('book_cover');
-        });
+        
     }
 
     /**
