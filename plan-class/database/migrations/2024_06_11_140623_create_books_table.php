@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('author');
             $table->string('title');
-            $table->string('subtitle');
+            $table->string('subtitle')->nullable();
             $table->integer('edition');
             $table->string('publishing_company');
             $table->year('year_of_publication');
