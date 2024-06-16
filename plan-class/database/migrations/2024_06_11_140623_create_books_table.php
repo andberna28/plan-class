@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('publishing_company');
             $table->year('year_of_publication');
             $table->string('book_cover');
+            $table->timestamps();
         });
     }
 
