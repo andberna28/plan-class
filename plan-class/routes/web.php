@@ -1,6 +1,5 @@
 <?php
 
-use auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserRegisterController;
@@ -17,6 +16,11 @@ Route::middleware('auth')->group(function () {
     Route::get('painel', function() {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('create', [LibraryController::class, 'create'])
+        ->name('create');
+    Route::get('edit', [LibraryController::class, 'edit'])
+        ->name('edit');
 });
 
 Route::get('cadastro', function () {
