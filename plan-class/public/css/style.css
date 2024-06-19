@@ -1,4 +1,14 @@
+*{
+  margin: 0;
+}
+
 body{
-  background-color: rgb(rgb(235, 76, 37));
-  color: white;
+  background-color: orange;
+}
+
+header > .container{
+  background-color: white;
+  width: 100vw;
+  padding-bottom: 30px;
+  padd
 }

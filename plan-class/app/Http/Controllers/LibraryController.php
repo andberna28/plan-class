@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Books;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -20,7 +21,8 @@ class LibraryController extends Controller
      */
     public function create()
     {
-        //
+        $book = new Books();
+        return view('create', compact('Books'));
     }
 
     /**
