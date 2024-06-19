@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class LibraryController extends Controller
 {
@@ -27,7 +28,16 @@ class LibraryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Validator::make($request->all(), [
+            'author' => ['required', 'string', 'min:3'],
+            'title' => ['required', 'string'],
+            'subtitle' => ['nullable', 'string'],
+            'edition' => ['required', 'interger'],
+            'publishing_company' => ['required', 'string'],
+            'year_of_publication' => ['required', 'year'],
+            'book_cover' => ['required', 'image', 'mimes:jpg,jpeg,png,bmp,svg,webp'],
+        ]);
+        
     }
 
     /**

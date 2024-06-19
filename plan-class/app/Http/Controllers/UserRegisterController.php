@@ -26,7 +26,5 @@ class UserRegisterController extends Controller
 
         Auth::login($user);
         return redirect()->route('login');
-
-        return redirect()->route('register')->withInput()->withErrors($validator);
     }
 }
