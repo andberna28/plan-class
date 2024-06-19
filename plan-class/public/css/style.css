@@ -2,13 +2,34 @@
   margin: 0;
 }
 
-body{
-  background-color: orange;
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url(../fonts/JetBrains_Mono/JetBrainsMono-Regular.ttf);
 }
 
-header > .container{
+body{
+  font-family: 'JetBrains Mono';
+  width: 100%;
+}
+
+nav{
+  background-color: rgb(165, 2, 230);
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: x-large;
+}
+
+nav > div > h1{
+  padding-left: 50px;
+}
+
+.logout{
   background-color: white;
-  width: 100vw;
-  padding-bottom: 30px;
-  padd
+  border: none;
+  border-radius: 10px;
+  width: 50px;
+  height: 30px;
+  font-family: 'JetBrains Mono';
 }

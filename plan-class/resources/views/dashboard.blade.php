@@ -2,8 +2,11 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <form action="{{ route('logout') }}" method="get">
-        @csrf
-        <button type="submit">Sair</button>
-    </form>
+    <nav>
+        <h1>Sistema de Livros</h1>
+        <form action="{{ route('logout') }}" method="get">
+            @csrf
+            <button class="logout" type="submit">Sair</button>
+        </form>
+    </nav>
 @endsection

@@ -12,13 +12,6 @@
     <script src="./js/scripts.js"></script>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <div class="box">
-          <h1>Sistema de Livros</h1>
-        </div>
-      </div>
-    </header>
     @yield('content')
   </body>
 </html>
