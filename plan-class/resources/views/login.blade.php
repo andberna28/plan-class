@@ -2,30 +2,37 @@
 @section('title', 'Login')
 
 @section('content')
+    <nav>
+        <h1>Sistema de Livros</h1>
+    </nav>
     <div class="container">
-        @if(session('error'))
-            <div class="alert alert-danger">
-                {{ session('error') }}
-            </div>
-        @endif
-        <h1>Página de Login</h1>
-        <form action="{{ route('login') }}" method="POST">
-            @csrf
-            <label>
-                Email:
-                <input type="email" name="email" class="form-control">
-            </label>
-            <label>
-                Senha:
-                <input type="password" name="password" class="form-control">
-            </label>
-            <button class="btn btn-primary">Entrar</button>
-            <label>
-                Não tem uma conta?
-                <a href="{{ route('register') }}">
-                    Cadastre-se
-                </a>
-            </label>
-        </form>
+        <div class="container-error">
+            @if(session('error'))
+                <div class="error">
+                    {{ session('error') }}
+                </div>
+            @endif
+        </div>
+        <div class="div-login">
+            <h1>Página de Login</h1>
+            <form action="{{ route('login') }}" method="POST">
+                @csrf
+                <label>
+                    Email:
+                    <input type="email" name="email" class="form-control">
+                </label>
+                <label>
+                    Senha:
+                    <input type="password" name="password" class="form-control">
+                </label>
+                <button class="btn-conta">Entrar</button>
+                <label>
+                    Não tem uma conta?
+                    <a href="{{ route('register') }}">
+                        Cadastre-se
+                    </a>
+                </label>
+            </form>
+        </div>
     </div>
 @endsection

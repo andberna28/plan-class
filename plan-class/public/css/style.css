@@ -10,6 +10,7 @@
 body{
   font-family: 'JetBrains Mono';
   width: 100%;
+
 }
 
 nav{
@@ -19,10 +20,37 @@ nav{
   justify-content: space-around;
   align-items: center;
   font-size: x-large;
+  height: 7vh;
 }
 
 nav > div > h1{
   padding-left: 50px;
+}
+
+a{
+  color: white;
+}
+
+input{
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  width: 100%;
+}
+
+.container-error{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(184, 1, 1);
+  width: 20vw;
+  border-radius: 10px;
+}
+
+.error{
+  color: white;
 }
 
 .logout{
@@ -32,4 +60,61 @@ nav > div > h1{
   width: 50px;
   height: 30px;
   font-family: 'JetBrains Mono';
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.div-cadastro{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(165, 2, 230);
+  color: white;
+  width: 26vw;
+  height: 46vh;
+  border-radius: 30px;
+  gap: 10px;
+}
+
+.div-cadastro > form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-conta{
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  width: 90px;
+  height: 30px;
+  font-family: 'JetBrains Mono';
+  font-weight: bold;
+}
+
+.div-login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(165, 2, 230);
+  color: white;
+  width: 26vw;
+  height: 46vh;
+  border-radius: 30px;
+  gap: 10px;
+}
+
+.div-login > form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

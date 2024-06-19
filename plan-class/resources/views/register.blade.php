@@ -2,15 +2,20 @@
 @section('title', 'Cadastro')
 
 @section('content')
+    <nav>
+        <h1>Sistema de Livros</h1>
+    </nav>
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="container-error">
             @if ($errors->any())
                 @foreach ($errors->all() as $erro)
-                    <div class="alert alert-danger">
+                    <div class="error">
                         {{ $erro }}
                     </div>
                 @endforeach
             @endif
+        </div>
+        <div class="div-cadastro">
             <h1>Página de Cadastro</h1>
             <form action="{{ route('register') }}" method="POST">
                 @csrf
@@ -30,7 +35,7 @@
                     Confirmar senha:
                     <input type="password" name="password_confirmation" class="form-control">
                 </label>
-                <button class="btn btn-primary">Cadastrar</button>
+                <button class="btn-conta">Cadastrar</button>
                 <label>
                     Já tem uma conta?
                     <a href="{{ route('login') }}">
