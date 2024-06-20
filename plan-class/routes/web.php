@@ -22,6 +22,7 @@ Route::middleware('auth')->group(function () {
         ->name('create');
     Route::get('edit', [LibraryController::class, 'edit'])
         ->name('edit');
+    Route::get('/dashboard', [LibraryController::class, 'index']);
 });
 
 Route::get('cadastro', function () {

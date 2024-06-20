@@ -2,18 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Books;
+use App\Models\Book;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Validator;
 
 class LibraryController extends Controller
 {
+
+    private $objUsers;
+    private $objBooks;
+
+    public function __construct(){
+        $this->objUsers = new User;
+        $this->objBooks = new Book;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //todo
+        $users = $this->objUsers->all();
+        $books = $this->objBooks->all();
+
+        return view('dashboard', compact('users', 'books'));
     }
 
     /**
@@ -21,8 +35,8 @@ class LibraryController extends Controller
      */
     public function create()
     {
-        $book = new Books();
-        return view('create', compact('Books'));
+        $book = new Book();
+        return view('create', compact('books'));
     }
 
     /**

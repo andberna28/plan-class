@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('books', function (Blueprint $table){
             $table->id();
             //todo Concluir saporra desse user_id
-            $table->bigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on(table:'users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('author');
             $table->string('title');
             $table->string('subtitle');
