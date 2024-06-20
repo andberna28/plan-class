@@ -13,7 +13,7 @@ class LibraryController extends Controller
      */
     public function index()
     {
-        //
+        //todo
     }
 
     /**
@@ -47,7 +47,7 @@ class LibraryController extends Controller
      */
     public function show(string $id)
     {
-        //
+        //todo
     }
 
     /**
@@ -55,7 +55,7 @@ class LibraryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //todo
     }
 
     /**
@@ -63,7 +63,7 @@ class LibraryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //todo
     }
 
     /**
@@ -71,6 +71,6 @@ class LibraryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //todo
     }
 }

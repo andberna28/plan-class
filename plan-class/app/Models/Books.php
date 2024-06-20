@@ -15,4 +15,14 @@ class Books extends Model
      * @var string
      */
     protected $table = 'books';
+
+    protected $fillable = [
+        'author',
+        'title',
+        'subtitle',
+        'edition',
+        'publishing_company',
+        'year_of_publication',
+        'book_cover',
+    ];
 }

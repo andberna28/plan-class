@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserRegisterController;
+use App\Http\Controllers\LibraryController;
 
 Route::get('/', [LoginController::class, 'index']);
 Route::post('/', [LoginController::class, 'login'])
@@ -13,7 +14,7 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
     Route::get('/dashboard', [LoginController::class, 'dashboard'])
         ->name('dashboard');
-    Route::get('painel', function() {
+    Route::get('dashboard', function() {
         return view('dashboard');
     })->name('dashboard');
 

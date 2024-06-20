@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table){
             $table->id();
+            //todo Concluir saporra desse user_id
+            $table->bigInteger('user_id');
             $table->string('author');
             $table->string('title');
-            $table->string('subtitle')->nullable();
+            $table->string('subtitle');
             $table->integer('edition');
             $table->string('publishing_company');
             $table->year('year_of_publication');
-            $table->string('book_cover');
+            $table->string('book_cover')->nullable();
             $table->timestamps();
         });
     }
