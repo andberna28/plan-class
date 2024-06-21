@@ -27,7 +27,7 @@ class Book extends Model
     ];
 
     public function relUsers(){
-        return $this->hasMany('App\Models\User', foreignKey:'id', localKey:'id_user');
+        return $this->hasMany('App\Models\User', foreignKey:'id', localKey:'user_id');
     }
 
 }

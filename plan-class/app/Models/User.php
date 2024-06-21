@@ -46,6 +46,6 @@ class User extends Authenticatable
     }
 
     public function relBooks(){
-        return $this->hasOne('App\Models\Book', foreignKey:'id_user');
+        return $this->hasOne('App\Models\Book', foreignKey:'user_id');
     }
 }

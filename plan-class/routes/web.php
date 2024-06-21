@@ -12,11 +12,11 @@ Route::post('/', [LoginController::class, 'login'])
 Route::middleware('auth')->group(function () {
     Route::get('logout', [LoginController::class, 'logout'])
         ->name('logout');
-    Route::get('/dashboard', [LoginController::class, 'dashboard'])
-        ->name('dashboard');
-    Route::get('dashboard', function() {
-        return view('dashboard');
-    })->name('dashboard');
+    // Route::get('/dashboard', [LoginController::class, 'dashboard'])
+    //     ->name('dashboard');
+    // Route::get('dashboard', function() {
+    //     return view('dashboard');
+    // })->name('dashboard');
 
     Route::get('create', [LibraryController::class, 'create'])
         ->name('create');

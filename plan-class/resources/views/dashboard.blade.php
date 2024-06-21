@@ -4,14 +4,16 @@
 @section('content')
     <nav>
         <h1>Sistema de Livros</h1>
-        <form action="{{ route('logout') }}" method="get">
-            @csrf
-            <button class="logout" type="submit">Sair</button>
-        </form>
+        <div class="buttons">
+            <form action="{{ route('logout') }}" method="get">
+                @csrf
+                <button class="logout" type="submit">Sair</button>
+            </form>
+        </div>
     </nav>
     <div class="container">
         <div class="dashboard">
-            {{-- <table>
+            <table>
                 <thead>
                     <tr>
                         <th>Título</th>
@@ -32,7 +34,7 @@
                             <th>{{ $book->edition }}</th>
                             <th>{{ $book->publishing_company }}</th>
                             <th>{{ $book->year_of_publication }}</th>
-                            @if (empty($item->year_of_publication))
+                            @if (empty($book->year_of_publication))
                                 <th>{{ asset('img/semImagem.jpg') }}</th>
                             @else
                                 <th>{{ $book->book_cover }}</th>
@@ -40,7 +42,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table> --}}
+            </table>
         </div>
     </div>
 @endsection
