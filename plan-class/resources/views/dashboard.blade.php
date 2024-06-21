@@ -1,48 +1,53 @@
 @extends('layouts.main')
-@section('title', 'Dashboard')
+@section('title', 'Painel de Controle')
 
 @section('content')
     <nav>
         <h1>Sistema de Livros</h1>
         <div class="buttons">
+            <form action="{{ route('livros') }}">
+                <button class="nav-buttons" type="submit">Livros</button>
+            </form>
             <form action="{{ route('logout') }}" method="get">
                 @csrf
-                <button class="logout" type="submit">Sair</button>
+                <button class="nav-buttons" type="submit">Sair</button>
             </form>
         </div>
     </nav>
     <div class="container">
         <div class="dashboard">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Título</th>
-                        <th>Subtítulo</th>
-                        <th>Autor</th>
-                        <th>Edição</th>
-                        <th>Editora</th>
-                        <th>Ano de Publicação</th>
-                        <th>Capa do livro</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($books as $book)
+            <div class="table-livros">
+                <table>
+                    <thead>
                         <tr>
-                            <th>{{ $book->title }}</th>
-                            <th>{{ $book->subtitle }}</th>
-                            <th>{{ $book->author }}</th>
-                            <th>{{ $book->edition }}</th>
-                            <th>{{ $book->publishing_company }}</th>
-                            <th>{{ $book->year_of_publication }}</th>
-                            @if (empty($book->year_of_publication))
-                                <th>{{ asset('img/semImagem.jpg') }}</th>
-                            @else
-                                <th>{{ $book->book_cover }}</th>
-                            @endif
+                            <th>Título</th>
+                            <th>Subtítulo</th>
+                            <th>Autor</th>
+                            <th>Edição</th>
+                            <th>Editora</th>
+                            <th>Ano de Publicação</th>
+                            <th>Ações</th>
                         </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        @foreach ($books as $book)
+                            <tr>
+                                <td>{{ $book->title }}</td>
+                                <td>{{ $book->subtitle }}</td>
+                                <td>{{ $book->author }}</td>
+                                <td>{{ $book->edition }}</td>
+                                <td>{{ $book->publishing_company }}</td>
+                                <td>{{ $book->year_of_publication }}</td>
+                                {{-- @if (empty($book->year_of_publication))
+                                    <td>{{ asset('img/semImagem.jpg') }}</td>
+                                @else
+                                    <td>{{ $book->book_cover }}</td>
+                                @endif --}}
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 @endsection

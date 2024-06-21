@@ -12,17 +12,17 @@ Route::post('/', [LoginController::class, 'login'])
 Route::middleware('auth')->group(function () {
     Route::get('logout', [LoginController::class, 'logout'])
         ->name('logout');
-    // Route::get('/dashboard', [LoginController::class, 'dashboard'])
-    //     ->name('dashboard');
-    // Route::get('dashboard', function() {
-    //     return view('dashboard');
-    // })->name('dashboard');
-
     Route::get('create', [LibraryController::class, 'create'])
         ->name('create');
     Route::get('edit', [LibraryController::class, 'edit'])
         ->name('edit');
-    Route::get('/dashboard', [LibraryController::class, 'index']);
+    Route::get('show', [LibraryController::class, 'show'])
+        ->name('show');
+    Route::get('dashboard', [LibraryController::class, 'index'])
+        ->name('dashboard');
+    Route::get('livros', function(){
+        return view('biblioteca.show');
+    })->name('livros');
 });
 
 Route::get('cadastro', function () {
