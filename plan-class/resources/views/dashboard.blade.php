@@ -15,7 +15,7 @@
         </div>
     </nav>
     <div class="container">
-        <div class="dashboard">
+        <div class="table-window">
             <div class="table-livros">
                 <table>
                     <thead>

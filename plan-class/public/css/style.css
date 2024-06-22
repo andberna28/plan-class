@@ -1,159 +1,169 @@
 *{
-  margin: 0;
+    margin: 0;
 }
 
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url(../fonts/JetBrains_Mono/JetBrainsMono-Regular.ttf);
+    font-family: 'JetBrains Mono';
+    src: url(../fonts/JetBrains_Mono/JetBrainsMono-Regular.ttf);
 }
 
 /*! Tags HTML */
 
 body{
-  font-family: 'JetBrains Mono';
-  width: 100%;
-
+    font-family: 'JetBrains Mono';
+    width: 100%;
 }
 
 nav{
-  background-color: rgb(165, 2, 230);
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: x-large;
-  height: 7vh;
+    background-color: rgb(165, 2, 230);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: x-large;
+    height: 7vh;
 }
 
 nav > div > h1{
-  padding-left: 50px;
+    padding-left: 50px;
 }
 
 a{
-  color: white;
+    color: white;
 }
 
 input{
-  background-color: white;
-  border: none;
-  border-radius: 5px;
-  height: 25px;
-  width: 100%;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    width: 100%;
 }
 
 table{
-  display: flex;
-  justify-content: center;
-  background-color: white;
-  border-radius: 10px;
-  margin: 20px;
-  width: 64vw;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    margin: 20px;
+    width: 64vw;
 }
 
 tr{
-  display: flex;
-  gap: 70px;
-  margin: 0px 20px;
+    display: flex;
+    gap: 70px;
+    margin: 0px 20px;
 }
 
 /*! Classes */
 
 .container-error{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(184, 1, 1);
-  width: 20vw;
-  border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(184, 1, 1);
+    width: 20vw;
+    border-radius: 10px;
 }
 
 .error{
-  color: white;
+    color: white;
 }
 
 .nav-buttons{
-  background-color: white;
-  border: none;
-  border-radius: 7px;
-  padding: 6px;
-  font-family: 'JetBrains Mono';
-  font-weight: bold;
-  cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 6px;
+    font-family: 'JetBrains Mono';
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .div-cadastro{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(165, 2, 230);
-  color: white;
-  width: 26vw;
-  height: 46vh;
-  border-radius: 30px;
-  gap: 10px;
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(165, 2, 230);
+    color: white;
+    width: 26vw;
+    height: 46vh;
+    border-radius: 30px;
+    gap: 10px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
 }
 
 .div-cadastro > form{
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .btn-conta{
-  background-color: white;
-  border: none;
-  border-radius: 7px;
-  width: 90px;
-  height: 30px;
-  font-family: 'JetBrains Mono';
-  font-weight: bold;
-  cursor: pointer;
+    background-color: white;
+    border: none;
+    border-radius: 7px;
+    width: 90px;
+    height: 30px;
+    font-family: 'JetBrains Mono';
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .div-login{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(165, 2, 230);
-  color: white;
-  width: 26vw;
-  height: 46vh;
-  border-radius: 30px;
-  gap: 10px;
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(165, 2, 230);
+    color: white;
+    width: 26vw;
+    height: 46vh;
+    border-radius: 30px;
+    gap: 10px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
 }
 
 .div-login > form{
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.table-window{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 67vw;
+    height: 70vh;
+    background-color: rgb(165, 2, 230);
+    border-radius: 10px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
 }
 
 .table-livros{
-  display: flex;
-  justify-content: center;
-  align-items: top;
-  background-color: rgb(165, 2, 230);
-  width: 67vw;
-  height: 70vh;
-  border-radius: 10px;
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    background-color: white;
+    width: 60vw;
+    height: 65vh;
+    border-radius: 10px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
 }
 
 .buttons{
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
