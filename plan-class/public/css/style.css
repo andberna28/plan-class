@@ -12,6 +12,7 @@
 body{
     font-family: 'JetBrains Mono';
     width: 100%;
+    background-color: rgb(52, 60, 82);
 }
 
 nav{
@@ -32,30 +33,31 @@ a{
     color: white;
 }
 
-input{
-    background-color: white;
-    border: none;
-    border-radius: 5px;
-    height: 25px;
-    width: 100%;
-}
-
-table{
-    display: flex;
-    justify-content: center;
-    background-color: white;
-    border-radius: 10px;
-    margin: 20px;
-    width: 64vw;
+table, td, th{
+    border: 1px solid;
 }
 
 tr{
-    display: flex;
-    gap: 70px;
-    margin: 0px 20px;
+    text-align: center;
 }
 
-/*! Classes */
+td{
+    height: 40px;
+}
+
+table{
+    background-color: white;
+    border-radius: 10px;
+    width: 57.8vw;
+    margin: 20px;
+    border-collapse: collapse;
+}
+
+/** Classes */
+
+.preto{
+    color: black;
+}
 
 .container-error{
     display: flex;
@@ -110,6 +112,14 @@ tr{
     gap: 15px;
 }
 
+.div-cadastro > form > label > input{
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    width: 100%;
+}
+
 .btn-conta{
     background-color: white;
     border: none;
@@ -154,8 +164,6 @@ tr{
 
 .table-livros{
     display: flex;
-    justify-content: center;
-    align-items: top;
     background-color: white;
     width: 60vw;
     height: 65vh;
@@ -166,4 +174,48 @@ tr{
 .buttons{
     display: flex;
     gap: 10px;
+}
+
+.cadastro-livros{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(165, 2, 230);
+    color: white;
+    width: 26vw;
+    border-radius: 30px;
+    gap: 10px;
+    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
+}
+
+.cadastro-livros > form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px;
+}
+
+.file-button{
+    background-color: #ffffff;
+    color: black;
+    border-style: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    position: absolute;
+}
+.file-button:hover{
+    background-color: #d1d1d1;
+}
+
+/*? IDs */
+
+#other-inputs{
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    width: 100%;
 }

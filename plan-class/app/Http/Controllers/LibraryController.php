@@ -6,6 +6,7 @@ use App\Models\Book;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class LibraryController extends Controller
@@ -24,10 +25,8 @@ class LibraryController extends Controller
      */
     public function index()
     {
-        $users = $this->objUsers->all();
-        $books = $this->objBooks->all();
-
-        return view('dashboard', compact('users', 'books'));
+        $books = $this->objBooks->where('user_id', Auth::user()->id)->get();
+        return view('dashboard', ['books' => $books]);
     }
 
     /**
@@ -35,8 +34,7 @@ class LibraryController extends Controller
      */
     public function create()
     {
-        $book = new Book();
-        return view('create', compact('books'));
+        //
     }
 
     /**
@@ -47,13 +45,26 @@ class LibraryController extends Controller
         Validator::make($request->all(), [
             'author' => ['required', 'string', 'min:3'],
             'title' => ['required', 'string'],
-            'subtitle' => ['nullable', 'string'],
-            'edition' => ['required', 'interger'],
+            'subtitle' => ['required', 'string'],
+            'edition' => ['required', 'integer'],
             'publishing_company' => ['required', 'string'],
             'year_of_publication' => ['required', 'year'],
-            'book_cover' => ['required', 'image', 'mimes:jpg,jpeg,png,bmp,svg,webp'],
+            'book_cover' => ['nullable', 'image', 'mimes:jpg,jpeg,png,bmp,svg,webp'],
         ]);
-        
+
+        $book = Book::create([
+            'user_id' => Auth::user()->id,
+            'author' => $request->author,
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'edition' => $request->edition,
+            'publishing_company' => $request->publishing_company,
+            'year_of_publication' => $request->year_of_publication,
+            'book_cover' => $request->book_cover,
+        ]);
+
+        $user = auth()->user();
+        return redirect()->route('livros');
     }
 
     /**
@@ -61,7 +72,7 @@ class LibraryController extends Controller
      */
     public function show(string $id)
     {
-        //todo
+        //
     }
 
     /**
@@ -69,7 +80,8 @@ class LibraryController extends Controller
      */
     public function edit(string $id)
     {
-        //todo
+        $book = Book::findOrFail($id);
+        return view('biblioteca.edit', compact('book'));
     }
 
     /**
@@ -77,7 +89,27 @@ class LibraryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //todo
+        Validator::make($request->all(), [
+            'author' => ['required', 'string', 'min:3'],
+            'title' => ['required', 'string'],
+            'subtitle' => ['required', 'string'],
+            'edition' => ['required', 'integer'],
+            'publishing_company' => ['required', 'string'],
+            'year_of_publication' => ['required', 'year'],
+            'book_cover' => ['nullable', 'image', 'mimes:jpg,jpeg,png,bmp,svg,webp'],
+        ]);
+
+        $book = Book::where('id', $id)->update([
+            'author' => $request->author,
+            'title' => $request->title,
+            'subtitle' => $request->subtitle,
+            'edition' => $request->edition,
+            'publishing_company' => $request->publishing_company,
+            'year_of_publication' => $request->year_of_publication,
+            'book_cover' => $request->book_cover,
+        ]);
+
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -85,6 +117,7 @@ class LibraryController extends Controller
      */
     public function destroy(string $id)
     {
-        //todo
+        Book::where('id', $id)->delete();
+        return redirect()->route('dashboard');
     }
 }

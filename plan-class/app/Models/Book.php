@@ -17,6 +17,7 @@ class Book extends Model
     protected $table = 'books';
 
     protected $fillable = [
+        'user_id',
         'author',
         'title',
         'subtitle',
@@ -27,7 +28,7 @@ class Book extends Model
     ];
 
     public function relUsers(){
-        return $this->hasMany('App\Models\User', foreignKey:'id', localKey:'user_id');
+        return $this->hasOne(related: 'App\Models\User', foreignKey: 'id', localKey:'user_id');
     }
 
 }

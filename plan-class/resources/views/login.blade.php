@@ -19,11 +19,11 @@
                 @csrf
                 <label>
                     Email:
-                    <input type="email" name="email" class="form-control">
+                    <input id="other-inputs" type="email" name="email" class="form-control">
                 </label>
                 <label>
                     Senha:
-                    <input type="password" name="password" class="form-control">
+                    <input id="other-inputs" type="password" name="password" class="form-control">
                 </label>
                 <button class="btn-conta">Entrar</button>
                 <label>

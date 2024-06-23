@@ -12,17 +12,33 @@ Route::post('/', [LoginController::class, 'login'])
 Route::middleware('auth')->group(function () {
     Route::get('logout', [LoginController::class, 'logout'])
         ->name('logout');
-    Route::get('create', [LibraryController::class, 'create'])
-        ->name('create');
-    Route::get('edit', [LibraryController::class, 'edit'])
+
+    //! Rotas da Livraria
+    Route::get('edit/book/{id}', [LibraryController::class, 'edit'])
         ->name('edit');
-    Route::get('show', [LibraryController::class, 'show'])
+    Route::post('update/book/{id}', [LibraryController::class, 'update'])
+        ->name('update');
+    Route::get('show/book/{id}', [LibraryController::class, 'show'])
         ->name('show');
+    Route::get('destroy/book/{id}', [LibraryController::class, 'destroy'])
+        ->name('destroy');
     Route::get('dashboard', [LibraryController::class, 'index'])
         ->name('dashboard');
+
+    Route::get('{{/dashboard/$books->id}}', function () {
+        return view('dashboard');
+    });
+
     Route::get('livros', function(){
         return view('biblioteca.show');
     })->name('livros');
+
+    Route::get('cadastro-livros', function(){
+        return view('biblioteca.create');
+    })->name('cadastro-livros');
+
+    Route::post('cadastro-livros', [LibraryController::class, 'store'])
+        ->name('register-books');
 });
 
 Route::get('cadastro', function () {
