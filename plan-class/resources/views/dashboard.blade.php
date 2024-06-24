@@ -5,16 +5,12 @@
     <nav>
         <h1>Painel de Controle</h1>
         <div class="buttons">
-            <form action="{{ route('livros') }}">
-                <button class="nav-buttons" type="submit">Livros</button>
-            </form>
             <form action="{{ route('cadastro-livros') }}" method="get">
                 <button class="nav-buttons" type="submit">Cadastrar</button>
             </form>
-            <form action="{{ route('logout') }}" method="get">
-                @csrf
-                <button class="nav-buttons" type="submit">Sair</button>
-            </form>
+            <a href="{{ route('profile') }}">
+                <img class="nav-profile" src="/img/perfil.jpg">
+            </a>
         </div>
     </nav>
     <div class="container">
@@ -49,11 +45,11 @@
                                     @endif --}}
                                     <td>
                                         <a href="edit/book/{{$book->id}}">
-                                            <div class="preto">Editar</div>
+                                            <div class="buttons-edit">Editar</div>
                                         </a>
-                                        <form action="{{ route('destroy', $book->id) }}" method="get">
-                                            <button class="" type="submit">Deletar</button>
-                                        </form>
+                                        <a href="{{ route('destroy', $book->id) }}">
+                                            <div class="buttons-edit">Deletar</div>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

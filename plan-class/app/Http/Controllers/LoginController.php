@@ -15,7 +15,7 @@ class LoginController extends Controller
         $credenciais = $request->only('email', 'password');
 
         if (Auth::attempt($credenciais)){
-            return view('biblioteca.show');
+            return view('dashboard');
         }
 
         $request->session()->flash('error', 'Email ou senha incorretos');

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('subtitle');
             $table->integer('edition');
             $table->string('publishing_company');
-            $table->year('year_of_publication');
+            $table->integer('year_of_publication');
             $table->string('book_cover')->nullable();
             $table->timestamps();
         });

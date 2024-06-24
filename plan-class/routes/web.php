@@ -29,9 +29,9 @@ Route::middleware('auth')->group(function () {
         return view('dashboard');
     });
 
-    Route::get('livros', function(){
-        return view('biblioteca.show');
-    })->name('livros');
+    Route::get('profile', function(){
+        return view('profile');
+    })->name('profile');
 
     Route::get('cadastro-livros', function(){
         return view('biblioteca.create');

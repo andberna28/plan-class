@@ -5,19 +5,24 @@
     <nav>
         <h1>Cadastrar Livros</h1>
         <div class="buttons">
-            <form action="{{ route('livros') }}">
-                <button class="nav-buttons" type="submit">Livros</button>
-            </form>
             <form action="{{ route('dashboard') }}">
                 <button class="nav-buttons" type="submit">Painel</button>
             </form>
-            <form action="{{ route('logout') }}" method="get">
-                @csrf
-                <button class="nav-buttons" type="submit">Sair</button>
-            </form>
+            <a href="{{ route('profile') }}">
+                <img class="nav-profile" src="/img/perfil.jpg">
+            </a>
         </div>
     </nav>
     <div class="container">
+        <div class="container-error">
+            @if ($errors->any())
+                @foreach ($errors->all() as $erro)
+                    <div class="error">
+                        {{ $erro }}
+                    </div>
+                @endforeach
+            @endif
+        </div>
         <div class="cadastro-livros">
             <h1>Informações:</h1>
             <form action="{{ route('register-books') }}" method="POST">
@@ -45,10 +50,6 @@
                 <label>
                     Ano de publicação:
                     <input id="other-inputs" type="number" name="year_of_publication" class="form-control">
-                </label>
-                <label>
-                    Capa:
-                    <input type="file" name="book_cover" accept="mimes" class="form-control">
                 </label>
                 <button class="btn-conta">Cadastrar</button>
             </form>

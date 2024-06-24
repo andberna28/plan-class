@@ -14,7 +14,7 @@ class UserRegisterController extends Controller
     {
         Validator::make($request->all(), [
             'name' => ['required', 'string', 'min:3'],
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'unique:users'],
             'password' => ['required', 'confirmed', Password::min(8)],
         ])->validate();
 

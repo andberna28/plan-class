@@ -48,9 +48,8 @@ class LibraryController extends Controller
             'subtitle' => ['required', 'string'],
             'edition' => ['required', 'integer'],
             'publishing_company' => ['required', 'string'],
-            'year_of_publication' => ['required', 'year'],
-            'book_cover' => ['nullable', 'image', 'mimes:jpg,jpeg,png,bmp,svg,webp'],
-        ]);
+            'year_of_publication' => ['required', 'integer'],
+        ])->validate();
 
         $book = Book::create([
             'user_id' => Auth::user()->id,
@@ -60,11 +59,10 @@ class LibraryController extends Controller
             'edition' => $request->edition,
             'publishing_company' => $request->publishing_company,
             'year_of_publication' => $request->year_of_publication,
-            'book_cover' => $request->book_cover,
         ]);
 
         $user = auth()->user();
-        return redirect()->route('livros');
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -95,9 +93,8 @@ class LibraryController extends Controller
             'subtitle' => ['required', 'string'],
             'edition' => ['required', 'integer'],
             'publishing_company' => ['required', 'string'],
-            'year_of_publication' => ['required', 'year'],
-            'book_cover' => ['nullable', 'image', 'mimes:jpg,jpeg,png,bmp,svg,webp'],
-        ]);
+            'year_of_publication' => ['required', 'integer'],
+        ])->validate();
 
         $book = Book::where('id', $id)->update([
             'author' => $request->author,
@@ -106,7 +103,6 @@ class LibraryController extends Controller
             'edition' => $request->edition,
             'publishing_company' => $request->publishing_company,
             'year_of_publication' => $request->year_of_publication,
-            'book_cover' => $request->book_cover,
         ]);
 
         return redirect()->route('dashboard');
