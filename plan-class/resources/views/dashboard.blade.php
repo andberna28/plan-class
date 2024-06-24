@@ -35,14 +35,9 @@
                                     <td>{{ $book->title }}</td>
                                     <td>{{ $book->subtitle }}</td>
                                     <td>{{ $book->author }}</td>
-                                    <td>{{ $book->edition }}</td>
+                                    <td>{{ $book->edition }}°</td>
                                     <td>{{ $book->publishing_company }}</td>
                                     <td>{{ $book->year_of_publication }}</td>
-                                    {{-- @if (empty($book->year_of_publication))
-                                        <td>{{ asset('img/semImagem.jpg') }}</td>
-                                    @else
-                                        <td>{{ $book->book_cover }}</td>
-                                    @endif --}}
                                     <td>
                                         <a href="edit/book/{{$book->id}}">
                                             <div class="buttons-edit">Editar</div>

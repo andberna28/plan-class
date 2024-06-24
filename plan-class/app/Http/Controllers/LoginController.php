@@ -15,7 +15,7 @@ class LoginController extends Controller
         $credenciais = $request->only('email', 'password');
 
         if (Auth::attempt($credenciais)){
-            return view('dashboard');
+            return redirect()->route("dashboard");
         }
 
         $request->session()->flash('error', 'Email ou senha incorretos');

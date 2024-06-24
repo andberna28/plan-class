@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserRegisterController;
 use App\Http\Controllers\LibraryController;
 
+
 Route::get('/', [LoginController::class, 'index']);
 Route::post('/', [LoginController::class, 'login'])
     ->name('login');
