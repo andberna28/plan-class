@@ -229,6 +229,33 @@ table{
     font-size: large;
 }
 
+.empty{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    height: 65vh;
+    gap: 10px;
+}
+
+.empty > p{
+    font-size: larger;
+
+}
+
+.cad-empty{
+    background-color: #76637c;
+    border: none;
+    border-radius: 7px;
+    padding: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 7vw;
+    height: 5vh;
+    font-size: large;
+    color: white;
+}
 
 /*? IDs */
 

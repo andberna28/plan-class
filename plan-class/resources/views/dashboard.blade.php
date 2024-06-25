@@ -5,9 +5,6 @@
     <nav>
         <h1>Painel de Controle</h1>
         <div class="buttons">
-            <form action="{{ route('cadastro-livros') }}" method="get">
-                <button class="nav-buttons" type="submit">Cadastrar</button>
-            </form>
             <a href="{{ route('profile') }}">
                 <img class="nav-profile" src="/img/perfil.jpg">
             </a>
@@ -17,20 +14,20 @@
         <div class="table-window">
             <div class="table-livros">
                 <div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Título</th>
-                                <th>Subtítulo</th>
-                                <th>Autor</th>
-                                <th>Edição</th>
-                                <th>Editora</th>
-                                <th>Ano de Publicação</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($books as $book)
+                    @forelse ($books as $book)
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Título</th>
+                                    <th>Subtítulo</th>
+                                    <th>Autor</th>
+                                    <th>Edição</th>
+                                    <th>Editora</th>
+                                    <th>Ano de Publicação</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                                 <tr>
                                     <td>{{ $book->title }}</td>
                                     <td>{{ $book->subtitle }}</td>
@@ -47,9 +44,16 @@
                                         </a>
                                     </td>
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    @empty
+                        <div class="empty">
+                            <p>Nenhum livro cadastrado.</p>
+                            <form action="{{ route('cadastro-livros') }}" method="get">
+                                <button class="cad-empty" type="submit">Cadastrar</button>
+                            </form>
+                        </div>
+                    @endforelse
                 </div>
             </div>
             {{ $books->links() }}
