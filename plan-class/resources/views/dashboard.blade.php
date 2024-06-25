@@ -5,6 +5,9 @@
     <nav>
         <h1>Painel de Controle</h1>
         <div class="buttons">
+            <form action="{{ route('cadastro-livros') }}" method="get">
+                <button class="nav-buttons" type="submit">Cadastrar</button>
+            </form>
             <a href="{{ route('profile') }}">
                 <img class="nav-profile" src="/img/perfil.jpg">
             </a>
