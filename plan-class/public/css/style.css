@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    font-family: 'JetBrains Mono';
 }
 
 @font-face {
@@ -10,7 +11,6 @@
 /*! Tags HTML */
 
 body{
-    font-family: 'JetBrains Mono';
     width: 100%;
     background-color: #583466;
 }
@@ -78,7 +78,6 @@ table{
     border: none;
     border-radius: 7px;
     padding: 6px;
-    font-family: 'JetBrains Mono';
     font-weight: bold;
     cursor: pointer;
 }
@@ -131,7 +130,6 @@ table{
     border-radius: 7px;
     width: 90px;
     height: 30px;
-    font-family: 'JetBrains Mono';
     font-weight: bold;
     cursor: pointer;
 }
@@ -158,10 +156,11 @@ table{
 
 .table-window{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 67vw;
-    height: 70vh;
+    height: 75vh;
     background-color: rgb(165, 2, 230);
     border-radius: 10px;
     box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
@@ -173,7 +172,6 @@ table{
     width: 60vw;
     height: 65vh;
     border-radius: 10px;
-    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.274);
 }
 
 .buttons{
@@ -205,6 +203,32 @@ table{
 .foto-perfil{
   width: 150px;
 }
+
+.profile-content{
+    background-color: white;
+    width: 63vw;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    border-radius: 10px;
+}
+
+.logout{
+    background-color: #76637c;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+    font-size: large;
+}
+
 
 /*? IDs */
 

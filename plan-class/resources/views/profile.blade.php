@@ -17,11 +17,13 @@
         <div class="table-window">
             <div class="profile-content">
                 <img class="foto-perfil" src="/img/perfil.jpg">
-                <h1>Nome:</h1>
-                <h2>Email:</h2>
+                <div>
+                    <h1>Nome: {{ Auth::user()->name }}</h1>
+                    <h2>Email: {{ Auth::user()->email }}</h2>
+                </div>
                 <form action="{{ route('logout') }}" method="get">
                     @csrf
-                    <button class="nav-buttons" type="submit">Sair</button>
+                    <button class="logout" type="submit">Sair</button>
                 </form>
             </div>
         </div>

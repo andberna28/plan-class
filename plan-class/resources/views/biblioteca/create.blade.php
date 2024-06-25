@@ -29,27 +29,27 @@
                 @csrf
                 <label>
                     Título:
-                    <input id="other-inputs" type="text" name="title" class="form-control">
+                    <input id="other-inputs" type="text" name="title" class="form-control" placeholder="Ex: Harry Potter">
                 </label>
                 <label>
                     Subtítulo:
-                    <input id="other-inputs" type="text" name="subtitle" class="form-control">
+                    <input id="other-inputs" type="text" name="subtitle" class="form-control" placeholder="Ex: e o Prisioneiro de Azkaban">
                 </label>
                 <label>
                     Autor:
-                    <input id="other-inputs" type="text" name="author" class="form-control">
+                    <input id="other-inputs" type="text" name="author" class="form-control" placeholder="Ex: J. K. Rowling">
                 </label>
                 <label>
                     Edição:
-                    <input id="other-inputs" type="number" name="edition" class="form-control">
+                    <input id="other-inputs" type="number" name="edition" class="form-control" placeholder="Apenas números">
                 </label>
                 <label>
                     Editora:
-                    <input id="other-inputs" type="text" name="publishing_company" class="form-control">
+                    <input id="other-inputs" type="text" name="publishing_company" class="form-control" placeholder="Ex: Editora Rocco">
                 </label>
                 <label>
                     Ano de publicação:
-                    <input id="other-inputs" type="number" name="year_of_publication" class="form-control">
+                    <input id="other-inputs" type="number" max="2024" name="year_of_publication" class="form-control" placeholder="Ex: 2024">
                 </label>
                 <button class="btn-conta">Cadastrar</button>
             </form>

@@ -21,19 +21,19 @@
                 @csrf
                 <label>
                     Nome:
-                    <input id="other-inputs" type="text" name="name" class="form-control" value="{{ old('name') }}">
+                    <input id="other-inputs" type="text" name="name" class="form-control" placeholder="Ex: Rafael Fernandes" value="{{ old('name') }}">
                 </label>
                 <label>
                     Email:
-                    <input id="other-inputs" type="email" name="email" class="form-control" value="{{ old('email') }}">
+                    <input id="other-inputs" type="email" name="email" class="form-control" placeholder="Ex: seuemail@email.com" value="{{ old('email') }}">
                 </label>
                 <label>
                     Senha:
-                    <input id="other-inputs" type="password" name="password" class="form-control">
+                    <input id="other-inputs" type="password" name="password" class="form-control" placeholder="Mínimo 8 caracteres">
                 </label>
                 <label>
                     Confirmar senha:
-                    <input id="other-inputs" type="password" name="password_confirmation" class="form-control">
+                    <input id="other-inputs" type="password" name="password_confirmation" class="form-control" placeholder="Repita sua senha">
                 </label>
                 <button class="btn-conta">Cadastrar</button>
                 <label>

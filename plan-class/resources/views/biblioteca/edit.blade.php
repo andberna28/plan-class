@@ -49,7 +49,7 @@
                 </label>
                 <label>
                     Ano de publicação:
-                    <input value="{{ $book->year_of_publication }}" id="other-inputs" type="number" name="year_of_publication" class="form-control">
+                    <input value="{{ $book->year_of_publication }}" id="other-inputs" type="number" max="2024" name="year_of_publication" class="form-control">
                 </label>
                 <button class="nav-buttons">Concluir Alterações</button>
             </form>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Pagination\Paginator;
 
 class LibraryController extends Controller
 {
@@ -25,7 +26,7 @@ class LibraryController extends Controller
      */
     public function index()
     {
-        $books = $this->objBooks->where('user_id', Auth::user()->id)->get();
+        $books = $this->objBooks->where('user_id', Auth::user()->id)->simplePaginate(12);
         return view('dashboard', ['books' => $books]);
     }
 
